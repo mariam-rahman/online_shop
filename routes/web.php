@@ -6,6 +6,7 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MainpageController;
 //use App\Http\Controllers\MainpageConroller;
@@ -42,9 +43,12 @@ Route::get('myshop', [ShopController::class, 'shop'])->name('shop');
 
 Route::resource('slider',SliderController::class);
 
-Route::get('/category',[CategoryController::class,'index']);
+Route::get('/category',[CategoryController::class,'index'])->name('category.index');
 Route::get('/category/create',[CategoryController::class,'create'])->name('category.create');
 Route::post('/category',[CategoryController::class,'store'])->name('category.store');
 Route::get('/category/{id}/edit',[CategoryController::class,'edit'])->name('category.edit');
 Route::put('/category/{id}',[CategoryController::class,'update'])->name('category.update');
 Route::delete('/category/{id}',[CategoryController::class,'destroy'])->name('category.destroy');
+
+
+Route::resource('product',ProductController::class);

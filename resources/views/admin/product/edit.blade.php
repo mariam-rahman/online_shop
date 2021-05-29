@@ -6,32 +6,30 @@
    
 <div class="card w-50" style="padding:12px;">
 <div class="title">
-    <h3>Edit category</h3>
+    <h3>Add a new category</h3>
      </div>
     <div class="body">
-           <form action="{{route('category.update',$category)}}" method="post" enctype="multipart/form-data">
+
+           <form action="{{route('category.store')}}" method="post" enctype="multipart/form-data">
                @csrf
-               @method('PUT')
            <div class="form-group">
                <label for="title" style="float:left;">Title</label>
-               <input type="text" name="title" id=""  class="form-control {{$errors->first('title') != '' ? 'border-danger':''}}" value="{{$category->title}}">
+               <input type="text" name="title" id=""  class="form-control {{$errors->first('title') != '' ? 'border-danger':''}}">
                <span class="text-danger" style="float:left">{{$errors->first('title')}}</span>
            </div>
            <Br>
            <div class="form-group">
                <label for="desc" style="float:left;">Description</label>
-             <textarea name="desc" id="" cols="30" rows="10" class="form-control">
-             {{$category->desc}}
-             </textarea>
+             <textarea name="desc" id="" cols="30" rows="10" class="form-control"></textarea>
              <span class="text-danger" style="float:left">{{$errors->first('desc')}}</span>
            </div>
            <div class="form-group">
-           <img style="float:left" src="{{asset('storage/'.$category->image)}}" alt="" width="70"><br><br>
+               <label for="" style="float:left;">Image</label>
                <input type="file" name="image" id="" class="form-control">
                <span class="text-danger" style="float:left">{{$errors->first('image')}}</span>
            </div>
            <br>
-           <input type="submit" value="Update category" style="float:left;" class="btn  btn-primary">
+           <input type="submit" value="Add category" style="float:left;" class="btn  btn-primary">
            </form>
        </div>
     </div>

@@ -41,7 +41,7 @@ $checker = true;
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left align-self-center">
-
+kddkddk
                                 <h3 class="h2">{{$slider->title}}</h3>
                                 <p>
                       {{$slider->desc}}

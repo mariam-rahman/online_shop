@@ -3,7 +3,7 @@
 @section('content')
 <center>
 <div class="container container-fluid">
-   <h1>hellow world</h1>
+  
 <div class="card w-50" style="padding:12px;">
 <div class="title">
     <h3>Add a new category</h3>
